@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <style>
+        * {
+            border: 0;
+            margin: 0;
+        }
+
+        .container {
+            overflow-x: hidden;
+        }
+
+        nav {
+            background: green;
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+        }
+        .main{
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+        }
+        .main .aside{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: red;
+            height: 100%;
+            width: 100%;
+        }
+        .main section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            width: 100%;
+            background: yellow;
+            border: 2px solid violet;
+        }
+        .main section.grid{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+        }
+        .main section.grid div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            border: 2px solid blue;
+        }
+        .tooltip{
+            position: relative;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .tooltip p{
+            background: gray;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .tooltip p span{
+            display: none;
+            position: absolute;
+            top: 35px;
+            left: 47.5%;
+            background: black;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .tooltip p:hover{
+            background: rebeccapurple;
+
+        }
+        .tooltip p:hover span{
+           display: block;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            Navbar
+        </nav>
+        <div class="main">
+            <div class="aside">
+                Aside
+            </div>
+            <div class="main_body">
+                <section>Section 1</section>
+                <section>Section 2</section>
+                <section class="grid">
+                    <div>Sub section 1</div>
+                    <div>Sub section 2</div>
+                    <div>Sub section 3</div>
+                    <div>Sub section 4</div>
+                    <div>Sub section 5</div>
+                    <div>Sub section 6</div>
+                    <div>Sub section 7</div>
+                    <div>Sub section 8</div>
+                    <div>Sub section 9</div>
+                    <div>Sub section 10</div>
+                </section>
+            </div>
+        </div>
+        <div class="tooltip">
+            <p> Hover here to activate tooltip 
+                <span>Hello</span>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
